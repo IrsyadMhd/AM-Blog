@@ -1,4 +1,3 @@
-import React from 'react';
 import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,7 +18,6 @@ const FeaturedPostCard = ({ post }) => (
       </p>
       <div className="flex items-center absolute bottom-5 w-full justify-center">
         <Image
-          unoptimized
           alt={post.author.name}
           height="30px"
           width="30px"
@@ -32,7 +30,7 @@ const FeaturedPostCard = ({ post }) => (
       </div>
     </div>
     <Link href={`/post/${post.slug}`}>
-      <span className="cursor-pointer absolute w-full h-full" />
+      <a className="cursor-pointer absolute w-full h-full" />
     </Link>
   </div>
 );

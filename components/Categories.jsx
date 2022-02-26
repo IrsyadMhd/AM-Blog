@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import { getCategories } from '../services';
@@ -17,13 +17,13 @@ const Categories = () => {
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">Kategori</h3>
       {categories.map((category, index) => (
         <Link key={index} href={`/category/${category.slug}`}>
-          <span
+          <a
             className={`cursor-pointer block ${
               index === categories.length - 1 ? 'border-b-0' : 'border-b'
             } pb-3 mb-3`}
           >
             {category.name}
-          </span>
+          </a>
         </Link>
       ))}
     </div>

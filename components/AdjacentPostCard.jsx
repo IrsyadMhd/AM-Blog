@@ -1,4 +1,3 @@
-import React from 'react';
 import moment from 'moment';
 import Link from 'next/link';
 
@@ -18,7 +17,7 @@ const AdjacentPostCard = ({ post, position }) => (
       </p>
     </div>
     <Link href={`/post/${post.slug}`}>
-      <span className="z-10 cursor-pointer absolute w-full h-full" />
+      <a className="z-10 cursor-pointer absolute w-full h-full" />
     </Link>
     {position === 'LEFT' && (
       <div className="absolute arrow-btn bottom-5 text-center px-4 py-3 cursor-pointer bg-yellow-400 left-4 rounded-full">

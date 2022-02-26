@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head />
-        <body className="bg-[url('../public/bg2.jpg')] bg-no-repeat bg-cover">
+        <body className="bg-[url('../public/bg.webp')]">
           <Main />
           <NextScript />
         </body>

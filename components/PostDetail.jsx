@@ -1,4 +1,5 @@
-import React from 'react';
+import { Fragment } from 'react';
+import Image from 'next/image';
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
@@ -29,7 +30,7 @@ const PostDetail = ({ post }) => {
         return (
           <h3 key={index} className="text-xl font-semibold mb-4">
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </h3>
         );
@@ -37,7 +38,7 @@ const PostDetail = ({ post }) => {
         return (
           <p key={index} className="mb-8 text-slate-600 text-lg">
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </p>
         );
@@ -45,13 +46,13 @@ const PostDetail = ({ post }) => {
         return (
           <h4 key={index} className="text-md font-semibold mb-4">
             {modifiedText.map((item, i) => (
-              <React.Fragment key={i}>{item}</React.Fragment>
+              <Fragment key={i}>{item}</Fragment>
             ))}
           </h4>
         );
       case 'image':
         return (
-          <img
+          <Image
             key={index}
             alt={obj.title}
             height={obj.height}
@@ -78,17 +79,19 @@ const PostDetail = ({ post }) => {
   return (
     <>
       <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
-        <div className="relative overflow-hidden shadow-md mb-6">
-          <img
+        <div className="relative shadow-md mb-6">
+          <Image
             src={post.featuredImage.url}
-            alt=""
+            alt={post.title}
+            height="500"
+            width="800"
             className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
           />
         </div>
         <div className="px-4 lg:px-0">
           <div className="flex items-center mb-8 w-full">
             <div className="hidden md:flex items-center justify-center lg:mb-0 lg:w-auto mr-8 items-center">
-              <img
+              <Image
                 alt={post.author.name}
                 height="30px"
                 width="30px"
